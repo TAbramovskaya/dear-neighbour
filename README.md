@@ -56,7 +56,7 @@ The comparison of 2025 with 2024 shows an overall positive sales trend, with gro
 
 ### Potential Drivers of Margin Decline
 
-The analysis suggests that changes in the product sales mix may be one possible explanation for the margin decline. If lower-margin categories account for a growing share of revenue, overall gross margin can decrease even when total revenue and gross profit increase.
+The high-margin categories are not consistently leading volume growth, which may contribute to the overall margin decline if lower-margin categories are gaining a larger share of sales. The highest-margin category ranks 11th out of 14 in unit sales change (+6.44%), while the other top-margin categories rank between 4th and 10th.
 
 ## Limitations
 
