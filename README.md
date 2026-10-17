@@ -50,35 +50,26 @@ Key questions include:
 
 The comparison of 2025 with 2024 shows an overall positive sales trend, with growth across the main business indicators.
 
-However, gross margin declined slightly, despite the overall positive performance. The average margin change across the comparisons examined was approximately −0.11 percentage points.
+- Gross margin declined from Q2 onward. The decline appears across the remaining quarters, although its magnitude varies.
+- Monthly gross profit follows a pattern similar to the previous year but trends downward toward year-end. The decline is particularly noticeable in the final months of the year.
+- Several of the highest-gross-profit products show relatively weak growth in units sold. This highlights a potential area for further investigation into product-level performance.
 
 ### Potential Drivers of Margin Decline
 
 The analysis suggests that changes in the product sales mix may be one possible explanation for the margin decline. If lower-margin categories account for a growing share of revenue, overall gross margin can decrease even when total revenue and gross profit increase.
-
-This remains a hypothesis to validate through a more detailed breakdown of category-level margins, revenue shares, discounts, and purchase costs.
-
-### Business Implications
-
-The findings highlight the importance of monitoring profitability alongside sales growth. Further investigation into category performance and product mix could help identify opportunities to improve margins without compromising revenue growth or customer retention.
-
-## Dashboard
-
-The Power BI report contains two pages:
-
-- **Sales Overview:** annual performance, monthly trends, product category comparisons, profitability, and city-level margin changes.
-- **Customers & Loyalty:** customer behavior, loyalty versus non-loyalty purchasing patterns, and loyalty program indicators.
-
-## Limitations
-
-- The analysis covers only 2024 and 2025; longer-term trends cannot be established from these two years alone.
-- No budgets, sales targets, or external benchmarks were provided.
-- Customer-level analysis is limited by purchases made without loyalty cards.
-- Gross profit and gross margin estimates depend on the available product purchase costs. If these are current costs rather than historical costs, the results may not reflect actual cost changes between 2024 and 2025.
-- Observed relationships between product mix and margin changes do not, on their own, establish causation.
 
 ## Conclusion
 
 The project provides an interactive overview of Dear Neighbour's retail performance in 2025 compared with 2024. While the overall sales trend is positive, the slight decline in gross margin highlights an area for further investigation.
 
 The dashboard is designed to help stakeholders move beyond headline sales growth and examine the factors that may influence profitability, product performance, and customer loyalty.
+
+## Limitations
+
+Further investigation of these trends is constrained by several data limitations.
+
+First, the dataset appears to be synthetic and insufficiently realistic. All loyalty program registrations occurred no later than the end of 2023, and no newly registered loyalty members made purchases during the two-year period under review (2024–2025). In addition, the average daily number of customer visits per store is fewer than two. 
+
+Second, product purchase costs are provided in the product table rather than as historical transaction-level costs. As a result, COGS for 2024 and 2025 must be calculated using the same available cost values. At the same time, the average selling prices of individual products appear to fluctuate only slightly throughout two year period. This provides some context for interpreting the sales trends, but it does not resolve the limitation related to historical purchase costs.
+
+The observed decline in gross margin is relatively small (approximately 0.11 percentage points on average). Given the limited fluctuations in selling prices and sales volumes, as well as the limitations of the synthetic dataset, this change may reflect random variation in the generated data rather than a meaningful underlying business trend. Therefore, the margin decline should be interpreted cautiously, and there is insufficient evidence to attribute it to a specific business factor.
