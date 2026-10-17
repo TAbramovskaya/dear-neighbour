@@ -27,7 +27,7 @@ The project includes the following datasets:
 
 The source data was provided in XLSX format, with column names and values in Russian.
 
-1. **Data preparation and translation:** Python was used to inspect, prepare, and translate the source data into English. The code and workflow are available in the [Jupyter notebook](data/data_overview.ipynb).
+1. **Data preparation and translation:** Python was used to inspect, prepare, and translate the source data into English. The code and workflow are available in the [Jupyter notebook](python/data_overview.ipynb).
 2. **Metric development:** Key performance indicators were calculated in Power BI using DAX.
 3. **Dashboard development:** An interactive Power BI report was created to compare annual performance, investigate changes across product categories and cities, and explore customer and loyalty program behavior.
 
