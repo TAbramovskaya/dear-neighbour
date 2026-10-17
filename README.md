@@ -8,7 +8,7 @@ The project uses two complete consecutive years of data (2024 and 2025) to evalu
 
 ## Dataset
 
-The dataset covers 22,790 transactions across stores in nine Russian cities over two full calendar years. Transaction records contain detailed product-level information, including quantities sold, selling prices, discounts, and payment methods. Products are organized into 14 categories. Approximately ??% of receipts do not contain a customer ID, as these purchases were made without a loyalty card.
+The dataset covers 22,790 transactions across stores in nine Russian cities over two full calendar years. Transaction records contain detailed product-level information, including quantities sold, selling prices, discounts, and payment methods. Products are organized into 14 categories. Approximately 45% of receipts do not contain a customer ID, as these purchases were made without a loyalty card.
 
 <details>
 <summary>View dataset details</summary>
@@ -28,8 +28,8 @@ The project includes the following datasets:
 The source data was provided in XLSX format, with column names and values in Russian.
 
 1. **Data preparation and translation:** Python was used to inspect, prepare, and translate the source data into English. The code and workflow are available in the [Jupyter notebook](data/data_overview.ipynb).
-2**Metric development:** Key performance indicators were calculated in Power BI using DAX, including revenue, gross profit, gross margin, transaction count, and units sold.
-3**Dashboard development:** An interactive Power BI report was created to compare annual performance, investigate changes across product categories and cities, and explore customer and loyalty program behavior.
+2. **Metric development:** Key performance indicators were calculated in Power BI using DAX.
+3. **Dashboard development:** An interactive Power BI report was created to compare annual performance, investigate changes across product categories and cities, and explore customer and loyalty program behavior.
 
 ## Business Objectives
 
@@ -48,7 +48,7 @@ Key questions include:
 
 ### Overall Business Performance
 
-The comparison of 2025 with 2024 shows an overall positive sales trend, with growth across the main business indicators.
+The comparison of 2025 with 2024 shows an overall positive sales trend, with growth across the main business indicators. However, several potential areas of concern emerged from the analysis.
 
 - Gross margin declined from Q2 onward. The decline appears across the remaining quarters, although its magnitude varies.
 - Monthly gross profit follows a pattern similar to the previous year but trends downward toward year-end. The decline is particularly noticeable in the final months of the year.
@@ -58,18 +58,10 @@ The comparison of 2025 with 2024 shows an overall positive sales trend, with gro
 
 The analysis suggests that changes in the product sales mix may be one possible explanation for the margin decline. If lower-margin categories account for a growing share of revenue, overall gross margin can decrease even when total revenue and gross profit increase.
 
-## Conclusion
-
-The project provides an interactive overview of Dear Neighbour's retail performance in 2025 compared with 2024. While the overall sales trend is positive, the slight decline in gross margin highlights an area for further investigation.
-
-The dashboard is designed to help stakeholders move beyond headline sales growth and examine the factors that may influence profitability, product performance, and customer loyalty.
-
 ## Limitations
-
-Further investigation of these trends is constrained by several data limitations.
 
 First, the dataset appears to be synthetic and insufficiently realistic. All loyalty program registrations occurred no later than the end of 2023, and no newly registered loyalty members made purchases during the two-year period under review (2024–2025). In addition, the average daily number of customer visits per store is fewer than two. 
 
 Second, product purchase costs are provided in the product table rather than as historical transaction-level costs. As a result, COGS for 2024 and 2025 must be calculated using the same available cost values. At the same time, the average selling prices of individual products appear to fluctuate only slightly throughout two year period. This provides some context for interpreting the sales trends, but it does not resolve the limitation related to historical purchase costs.
 
-The observed decline in gross margin is relatively small (approximately 0.11 percentage points on average). Given the limited fluctuations in selling prices and sales volumes, as well as the limitations of the synthetic dataset, this change may reflect random variation in the generated data rather than a meaningful underlying business trend. Therefore, the margin decline should be interpreted cautiously, and there is insufficient evidence to attribute it to a specific business factor.
+The observed decline in gross margin is relatively small (approximately 0.11 percentage points on average). Given the limited fluctuations in selling prices and sales volumes, as well as the limitations of the synthetic dataset, this change may reflect random variation in the generated data rather than a meaningful underlying business trend.
