@@ -8,7 +8,7 @@ The project uses two complete consecutive years of data (2024 and 2025) to evalu
 
 ## Dataset
 
-The dataset covers 22,790 transactions across stores in nine Russian cities over two full calendar years. Transaction records contain detailed product-level information, including quantities sold, selling prices, discounts, and payment methods. Products are organized into 14 categories. Approximately 45% of receipts do not contain a customer ID, as these purchases were made without a loyalty card.
+The [dataset](data/dear_neighbour.xlsx) covers 22,790 transactions across stores in nine Russian cities over two full calendar years. Transaction records contain detailed product-level information, including quantities sold, selling prices, discounts, and payment methods. Products are organized into 14 categories. Approximately 45% of receipts do not contain a customer ID, as these purchases were made without a loyalty card.
 
 <details>
 <summary>View dataset details</summary>
