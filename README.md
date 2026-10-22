@@ -4,64 +4,62 @@
 
 An annual performance review of **Dear Neighbour**, a grocery retail chain in Russia, comparing sales performance in 2025 with the previous year.
 
-The project uses two complete consecutive years of data (2024 and 2025) to evaluate business performance, identify potential areas of concern, and explore opportunities for improvement.
+Using two complete consecutive years of data (2024 and 2025), the project evaluates business performance, identifies potential areas of concern, and investigates the factors behind changes in sales and profitability.
 
 ## Dataset
 
-The [dataset](data/dear_neighbour.xlsx) covers 22,790 transactions across stores in nine Russian cities over two full calendar years. Transaction records contain detailed product-level information, including quantities sold, selling prices, discounts, and payment methods. Products are organized into 14 categories. Approximately 45% of receipts do not contain a customer ID, as these purchases were made without a loyalty card.
+The source data was provided in XLSX format, with column names and values in Russian. Python was used to inspect, prepare, and translate the data into English. The translation process is documented in the [translation notebook](python/translate_workbook.ipynb). No additional data cleaning or transformation was required. The [data overview notebook](python/data_overview.ipynb) documents the initial examination of the dataset, including its structure, contents, and key characteristics.
+
+The [dataset](data/dear_neighbour.xlsx) covers 22,790 transactions (unique receipts) across stores in nine Russian cities over two full calendar years. Approximately 45% of receipts do not contain a customer ID, as these purchases were made without a loyalty card. Products are organized into a two-level hierarchy of 14 categories and 49 subcategories.
 
 <details>
 <summary>View dataset details</summary>
 
-The project includes the following datasets:
+The dataset consists of five tables:
 
-- **Sales transactions:** transaction dates, stores, products, customers, quantities, prices, discounts, and sales amounts.
-- **Products:** product names, brands, categories, subcategories, purchase costs, retail prices, and suppliers.
-- **Stores:** store names, formats, cities, regions, floor areas, and opening dates.
-- **Customers:** customer demographics, age groups, and loyalty card registration dates.
-- **Suppliers:** supplier names, locations, and supply profiles.
+- **Sales transactions (`fact_sales`):** transaction IDs, transaction dates and times, store, product and customer IDs, quantities sold, unit prices, discount percentages, line totals, and payment methods.
+- **Products (`dim_products`):** product IDs, names, brands, categories, subcategories, purchase and retail prices in RUB, and supplier IDs.
+- **Stores (`dim_stores`):** store IDs, names, formats, cities, regions, floor areas in square meters, and opening dates.
+- **Customers (`dim_customers`):** customer IDs, names, gender, age, age groups, residential regions, and loyalty card registration dates.
+- **Suppliers (`dim_suppliers`):** supplier IDs, names, cities, and supply profiles.
 
 </details>
 
-## Analysis Process
-
-The source data was provided in XLSX format, with column names and values in Russian.
-
-1. **Data preparation and translation:** Python was used to inspect, prepare, and translate the source data into English. The code and workflow are available in the [Jupyter notebook](python/data_overview.ipynb).
-2. **Metric development:** Key performance indicators were calculated in Power BI using DAX.
-3. **Dashboard development:** An interactive Power BI report was created to compare annual performance, investigate changes across product categories and cities, and explore customer and loyalty program behavior.
-
-## Business Objectives
+### Business Objectives
 
 The objective was to assess how the business performed in 2025 compared with 2024.
 
 Since no business targets or budgets were provided, the analysis focuses on descriptive performance comparisons rather than target achievement. The goal is to identify emerging trends, potential weaknesses, and areas that may require further investigation.
 
-Key questions include:
+### Metrics and Initial Findings
 
-- How did revenue, gross profit, transaction count, and units sold change year over year?
-- Which product categories and cities contributed most to the observed changes?
-- How do purchasing patterns differ between loyalty and non-loyalty customers?
-- What potential opportunities exist to improve profitability and loyalty program performance?
+Key performance indicators were calculated in Power BI using DAX.
 
-## Key Findings
+The initial analysis revealed an important contrast: overall sales and other key business metrics increased in 2025, while the gross margin declined. This raised two main questions: what was driving the growth in sales, and what was causing profitability to decline despite the positive overall performance?
 
-### Overall Business Performance
+### Limitations
 
-The comparison of 2025 with 2024 shows an overall positive sales trend, with growth across the main business indicators. However, several potential areas of concern emerged from the analysis.
+**Synthetic data and customer activity.** The dataset appears to be synthetic and insufficiently realistic. All loyalty program registrations occurred no later than the end of 2023, and no newly registered loyalty members made purchases during the two-year period under review (2024–2025). In addition, the average daily number of customer visits per store is fewer than two. 
 
-- Gross margin declined from Q2 onward. The decline appears across the remaining quarters, although its magnitude varies.
-- Monthly gross profit follows a pattern similar to the previous year but trends downward toward year-end. The decline is particularly noticeable in the final months of the year.
-- Several of the highest-gross-profit products show relatively weak growth in units sold. This highlights a potential area for further investigation into product-level performance.
+**Historical product costs.** Product purchase costs are provided in the product table rather than as historical transaction-level costs. As a result, COGS for 2024 and 2025 must be calculated using the same available cost values. At the same time, the average selling prices of individual products appear to fluctuate only slightly throughout two year period. However, this does not tell us whether purchase costs also remained stable.
 
-### Potential Drivers of Margin Decline
+**Interpreting the gross margin decline.** Annual gross margin remains above 26%, and the year-over-year decline of approximately 0.11 percentage points is small in comparison. Given the synthetic nature of the dataset, this change is more likely to reflect random variation in the generated data than a meaningful underlying business trend. Nevertheless, it is still worth investigating where the decline originates within the available data, particularly whether it is associated with changes in the sales mix or in margins within individual product categories.
 
-The high-margin categories are not consistently leading volume growth, which may contribute to the overall margin decline if lower-margin categories are gaining a larger share of sales. The highest-margin category ranks 11th out of 14 in unit sales change (+6.44%), while the other top-margin categories rank between 4th and 10th.
+### Exploratory Analysis
 
-## Limitations
+To investigate these questions in greater detail, additional analyses were conducted in Python.
 
-First, the dataset appears to be synthetic and insufficiently realistic. All loyalty program registrations occurred no later than the end of 2023, and no newly registered loyalty members made purchases during the two-year period under review (2024–2025). In addition, the average daily number of customer visits per store is fewer than two. 
+- [Sales drivers analysis](python/sales_drivers.ipynb) explores year-over-year changes in sales performance, profitability, pricing, discounting, product mix, and customer purchasing patterns to identify the main drivers of sales growth.
+- [Margin decline analysis](python/margin_decline_analysis.ipynb) examines whether the decline in gross margin is primarily associated with changes in the sales mix or with changes in margins within individual product categories.
 
-Second, product purchase costs are provided in the product table rather than as historical transaction-level costs. As a result, COGS for 2024 and 2025 must be calculated using the same available cost values. At the same time, the average selling prices of individual products appear to fluctuate only slightly throughout two year period. This provides some context for interpreting the sales trends, but it does not resolve the limitation related to historical purchase costs.
+### Key Findings
 
-The observed decline in gross margin is relatively small (approximately 0.11 percentage points on average). Given the limited fluctuations in selling prices and sales volumes, as well as the limitations of the synthetic dataset, this change may reflect random variation in the generated data rather than a meaningful underlying business trend.
+**Sales growth was driven primarily by transaction volume.** The analysis suggests that the increase in sales revenue was driven primarily by a higher number of transactions. Year-over-year changes in the revenue mix across product subcategories fluctuate only slightly around zero, as do changes in average transaction value and average selling price per unit. This suggests that shifts in the sales mix, changes in average spending per transaction, and price movements played a limited role in overall revenue growth.
+
+The most substantial increases were observed in the number of transactions and the number of units sold. These changes are consistent with the nearly 10% year-over-year growth in both revenue and gross profit, suggesting that higher transaction volume was the main driver of the overall increase in sales.
+
+**Changes within individual baskets were more pronounced.** Changes in the composition of individual baskets were more pronounced than changes in the revenue mix across subcategories. Shifts in the relative shares of different products within transactions may therefore help explain the observed changes in gross margin, even though they had little impact on the overall revenue mix.
+
+### Dashboard Development
+
+The findings were brought together in an [interactive Power BI dashboard](viz/Dear Neighbour Sales.pbix) designed to present the overall business performance while highlighting the less obvious patterns uncovered during the analysis.
