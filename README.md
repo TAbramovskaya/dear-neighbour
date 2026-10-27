@@ -62,4 +62,19 @@ The most substantial increases were observed in the number of transactions and t
 
 ### Dashboard Development
 
-The findings were brought together in an [interactive Power BI dashboard](viz/Dear Neighbour Sales.pbix) designed to present the overall business performance while highlighting the less obvious patterns uncovered during the analysis.
+The findings were brought together in an [interactive Power BI dashboard](https://github.com/TAbramovskaya/dear-neighbour/blob/main/viz/Dear%20Neighbour%20Sales.pbix) designed to present the overall business performance while highlighting the less obvious patterns uncovered during the analysis.
+
+
+I divided the dashboard into two pages, each focusing on a different aspect of the business.
+
+**Sales Overview** provides a high-level view of key performance indicators and overall trends, with a closer look at changes in gross margin. 
+
+[](viz/dashboard_sales_overview.png)
+
+It also allows users to explore performance by city, which is useful because growth in 2025 was limited in some locations and the overall figures do not tell the whole story.
+
+**Products and Discounts** focuses on monthly changes in average transaction value and transaction volume, as well as differences in gross profit and discount levels across product subcategories. 
+
+[](viz/dashboard_products_and_discounts.png)
+
+The bar charts show the 15 subcategories with the highest gross profit, ranked in descending order, alongside the share of gross profit accounted for by discounts. Keeping the subcategories in the same order makes it easier to compare their gross profit with the relative scale of discounts.
