@@ -54,11 +54,9 @@ To investigate these questions in greater detail, additional analyses were condu
 
 ### Key Findings
 
-**Sales growth was driven primarily by transaction volume.** The analysis suggests that the increase in sales revenue was driven primarily by a higher number of transactions. Year-over-year changes in the revenue mix across product subcategories fluctuate only slightly around zero, as do changes in average transaction value and average selling price per unit. This suggests that shifts in the sales mix, changes in average spending per transaction, and price movements played a limited role in overall revenue growth.
+**Sales growth was accompanied by more transactions and units sold.** Revenue, gross profit, transaction count, and units sold all increased in 2025 compared with 2024. Year-on-year growth across product subcategories was generally positive for revenue, transaction count, and units sold, while changes in revenue per unit and average subcategory value per receipt remained relatively small. Overall, the results suggest that sales growth was associated with higher transaction volume and more units sold, rather than substantial increases in revenue per unit or average spending on products from individual subcategories.
 
-The most substantial increases were observed in the number of transactions and the number of units sold. These changes are consistent with the nearly 10% year-over-year growth in both revenue and gross profit, suggesting that higher transaction volume was the main driver of the overall increase in sales.
-
-**Changes within individual baskets were more pronounced.** Changes in the composition of individual baskets were more pronounced than changes in the revenue mix across subcategories. Shifts in the relative shares of different products within transactions may therefore help explain the observed changes in gross margin, even though they had little impact on the overall revenue mix.
+**The gross margin decline was small, with sales mix playing the larger role in most categories.** Annual gross margin decreased slightly, from 26.37% in 2024 to 26.26% in 2025 — a decline of 0.11 percentage points. The category-level decomposition suggests that changes in sales mix had a greater effect on the overall margin change than changes in gross margin within individual categories for most categories. These findings should be interpreted in the context of the synthetic dataset and its limitations, particularly the use of the same available product cost values for both years.
 
 ### Dashboard Development
 
