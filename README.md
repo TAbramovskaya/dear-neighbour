@@ -67,12 +67,12 @@ I divided the dashboard into two pages, each focusing on a different aspect of t
 
 **Sales Overview** provides a high-level view of key performance indicators and overall trends, with a closer look at changes in gross margin. 
 
-[](viz/dashboard_sales_overview.png)
+![](https://github.com/TAbramovskaya/dear-neighbour/blob/main/viz/dashboard_sales_overview.png)
 
 It also allows users to explore performance by city, which is useful because growth in 2025 was limited in some locations and the overall figures do not tell the whole story.
 
 **Products and Discounts** focuses on monthly changes in average transaction value and transaction volume, as well as differences in gross profit and discount levels across product subcategories. 
 
-[](viz/dashboard_products_and_discounts.png)
+![](https://github.com/TAbramovskaya/dear-neighbour/blob/main/viz/dashboard_products_and_discounts.png)
 
 The bar charts show the 15 subcategories with the highest gross profit, ranked in descending order, alongside the share of gross profit accounted for by discounts. Keeping the subcategories in the same order makes it easier to compare their gross profit with the relative scale of discounts.
